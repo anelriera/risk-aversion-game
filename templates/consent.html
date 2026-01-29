@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Bienvenida</title>
+        <link rel="stylesheet" href="/static/styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Atma:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg: #e9d7c1; /* marrón clarito */
+                --text: #301934; /* morado */
+                --title: #af6f09; /* marrón oscuro */
+
+                /* colores AC */
+                --ac1: #f2c57c; /* amarillo cálido */
+                --ac2: #a7c68d; /* verde suave */
+                --ac3: #f4a8a8; /* rosa suave */
+                --ac4: #8b2f2f; /* rojo oscuro */
+                --ac5: #7aa6c2; /* azul suave */
+            }
+
+            body {
+                font-family: "Atma", sans-serif;
+                background-color: var(--bg);
+                color: var(--text);
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 750px;
+                margin: 30px auto;
+                padding: 25px;
+            }
+
+            h1 {
+                color: var(--title);
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            /* TODOS los títulos en azul */
+            .card h2 {
+                color: var(--ac5);
+            }
+
+            /* Título de Consentimiento más pequeño */
+            .card:last-of-type h2 {
+                font-size: 20px;
+            }
+
+            p {
+                text-align: center;
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            p.consent {
+                font-size: 13px; /* más pequeño */
+            }
+
+            ul {
+                text-align: center;
+                margin: 0 auto;
+                padding-left: 0;
+                list-style: none;
+                line-height: 1.5;
+            }
+
+            ul li {
+                margin: 6px 0;
+            }
+
+            form {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            button {
+                margin-top: 12px;
+                padding: 10px 15px;
+                font-family: "Atma", sans-serif;
+                cursor: pointer;
+                background: var(--ac1);
+                border: none;
+                border-radius: 0;
+                color: #301934;
+                font-weight: 600;
+            }
+
+            label {
+                font-size: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main class="container">
+            <h1 class="title">Juego-experimento sobre la aversión al riesgo</h1>
+
+            <section class="card">
+                <h2>¿En qué consiste el juego?</h2>
+                <p>
+                    El juego consta de <strong>15 rondas</strong>. En cada ronda
+                    aparecerá una <strong>carta</strong> con un valor entre
+                    <strong>1 y 10</strong>. Ese número es el
+                    <strong>valor real</strong>. <br />
+                    Deberás
+                    <strong>declarar un número</strong>, pudiendo decir la
+                    verdad o mentir para maximizar tu puntuación. <br /><br />
+                    El <strong>objetivo</strong> es conseguir la puntuación más
+                    alta posible, teniendo en cuenta el
+                    <strong>riesgo de mentir</strong> y ser descubierto
+                    (auditado).
+                </p>
+            </section>
+
+            <section class="card">
+                <h2>Auditorías</h2>
+                <p>
+                    En algunas rondas puedes ser <strong>auditado</strong>. La
+                    probabilidad cambia:
+                </p>
+                <ul>
+                    Rondas 1–5: 20%<br />
+                    Rondas 6–10: 50%<br />
+                    Rondas 11–15: 80%
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Sistema de puntos</h2>
+                <ul>
+                    <strong>Si no hay auditoría</strong>
+                    ganas lo que declares.
+                    <br /><strong>Si hay auditoría...</strong>
+                    <br /><br />
+                    <strong>si dices la verdad:</strong>
+                    ganas el valor real<br />
+                    <strong>si mientes:</strong>
+                    pierdes la diferencia<br />
+                    (ilustrado más adelante)
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Consentimiento</h2>
+                <p class="consent">
+                    Este juego forma parte de un estudio académico sobre toma de
+                    decisiones. La participación es anónima, dura 1-2 minutos y
+                    es voluntaria. No se guardan datos personales, salvo que al
+                    final decidas
+                    <strong>dejar tu email para entrar en un sorteo</strong>.
+                </p>
+                <p class="consent">
+                    Puedes abandonar el juego en cualquier momento cerrando la
+                    página.
+                </p>
+            </section>
+
+            <form method="POST" action="/start" class="form">
+                <label class="checkbox">
+                    <input type="checkbox" name="consent" />
+                    He leído la información y acepto participar<br />
+                </label>
+
+                <button type="submit" class="btn">Empezar el juego</button>
+            </form>
+        </main>
+    </body>
+</html>

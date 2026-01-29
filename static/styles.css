@@ -1,0 +1,93 @@
+:root {
+    --bg: #ffffff; /* fondo blanco */
+    --title: #af6f09; /* marrón */
+    --text: #301934; /* morado */
+    --muted: #6b6b6b;
+
+    --red-dark: #8b2f2f;
+    --green: #2f7a4b;
+    --accent: #f2c57c;
+    --accent2: #a7c68d;
+    --accent3: #f4a8a8;
+}
+
+body {
+    font-family: "Atma", sans-serif;
+    background-color: var(--bg);
+    text-align: center;
+    color: var(--text);
+}
+
+.game-box {
+    background: transparent;
+    width: 420px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.card-container {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.card-container img {
+    width: 140px;
+}
+
+.shuffling {
+    animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+.rules {
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+#auditProb {
+    font-weight: bold;
+}
+
+#warning {
+    color: var(--red-dark);
+    font-weight: bold;
+}
+
+.audit {
+    color: var(--red-dark);
+    font-weight: bold;
+}
+
+.no-audit {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.error {
+    color: var(--red-dark);
+    font-weight: bold;
+}
+
+#result,
+#score {
+    margin-top: 15px;
+}
+
+/* 🌟 título marrón */
+h1 {
+    color: var(--title);
+}

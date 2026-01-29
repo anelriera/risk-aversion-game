@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Experimento - Consentimiento</title>
+    </head>
+    <body>
+        <h1>Experimento: Toma de decisiones bajo incertidumbre</h1>
+
+        <h2>Consentimiento informado</h2>
+        <p>
+            Este experimento es anónimo. No se recogen datos personales. Se
+            recogerán solo respuestas numéricas y tiempos para fines académicos.
+        </p>
+
+        <h2>Instrucciones</h2>
+        <p>
+            Vas a jugar 15 rondas. En cada ronda verás un número secreto (1–10).
+            Debes reportar un número (1–10). A veces habrá auditoría. Tu
+            objetivo es maximizar tu puntuación.
+        </p>
+
+        <button id="startBtn">Comenzar</button>
+
+        <script>
+            const startBtn = document.getElementById("startBtn");
+            startBtn.addEventListener("click", () => {
+                window.location.href = "/game";
+            });
+        </script>
+    </body>
+</html>
