@@ -39,12 +39,19 @@ document.getElementById("saveEmailBtn").addEventListener("click", async () => {
 
   if (!email) return;
 
-  await fetch("/save_email", {
+  const response = await fetch("/save_email", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email }),
   });
 
-  document.getElementById("emailInput").value = "";
-  alert("¡Gracias! Tu email ha sido guardado 😊");
+  const result = await response.json();
+
+  if (response.ok) {
+    document.getElementById("emailInput").value = "";
+    alert("¡Gracias! Tu email ha sido guardado 😊");
+    document.getElementById("saveEmailBtn").disabled = true; // Evitar doble clic
+  } else {
+    alert(result.error || "Ocurrió un error al guardar el email.");
+  }
 });
