@@ -1,49 +1,44 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Juego</title>
-        <link rel="stylesheet" href="/static/styles.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Atma:wght@500&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <h1>Riesgo y Recompensa</h1>
 
-        <div class="game-box">
-            <p>Ronda: <span id="roundNumber">1</span>/15</p>
-            <p>Probabilidad de auditoría: <span id="auditProb"></span></p>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@500&display=swap" rel="stylesheet" />
+</head>
 
-            <div class="card-container">
-                <img id="cardImg" src="" alt="Carta" />
-            </div>
+<body>
+    <h1>Riesgo y Recompensa</h1>
 
-            <p class="rules">
-                Si no te auditan → <span id="ruleNoAudit">—</span><br />
-                Si te auditan → <span id="ruleAudit">—</span>
-            </p>
+    <div class="game-box">
+        <p>Ronda: <span id="roundNumber">1</span>/15</p>
+        <p>Probabilidad de auditoría: <span id="auditProb"></span></p>
 
-            <p id="warning"></p>
-
-            <label>
-                Valor declarado:
-                <input
-                    type="number"
-                    id="declaredNumber"
-                    min="1"
-                    max="10"
-                    disabled
-                />
-            </label>
-
-            <button id="submitBtn">Enviar</button>
-
-            <div id="result"></div>
-            <div id="score"></div>
+        <div class="card-container">
+            <img id="cardImg" src="" alt="Carta" />
         </div>
 
-        <script src="/static/game.js"></script>
-    </body>
+        <p class="rules">
+            Si no te auditan → <span id="ruleNoAudit">—</span><br />
+            Si te auditan → <span id="ruleAudit">—</span>
+        </p>
+
+        <p id="warning"></p>
+
+        <label>
+            Valor declarado:
+            <input type="number" id="declaredNumber" min="1" max="10" disabled />
+        </label>
+
+        <button id="submitBtn">Enviar</button>
+
+        <div id="result"></div>
+        <div id="score"></div>
+    </div>
+
+    <script src="/static/game.js"></script>
+</body>
+
 </html>

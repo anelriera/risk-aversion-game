@@ -1,95 +1,97 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Gracias por participar</title>
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Atma:wght@500&display=swap"
-            rel="stylesheet"
-        />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gracias por participar</title>
 
-        <style>
-            body {
-                font-family: "Atma", sans-serif;
-                background-color: #e9d7c1;
-                color: #301934;
-                text-align: center;
-                padding: 40px;
-            }
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@500&display=swap" rel="stylesheet" />
 
-            .box {
-                max-width: 600px;
-                margin: auto;
-                background: #fdf6ee;
-                padding: 30px;
-                border-radius: 8px;
-            }
+    <style>
+        body {
+            font-family: "Atma", sans-serif;
+            background-color: #e9d7c1;
+            color: #301934;
+            text-align: center;
+            padding: 40px;
+        }
 
-            h1 {
-                color: #af6f09;
-                margin-bottom: 20px;
-            }
+        .box {
+            max-width: 600px;
+            width: 90%;
+            /* Mobile fix: fluid width */
+            margin: auto;
+            background: transparent;
+            padding: 30px;
+            border-radius: 8px;
+        }
 
-            p {
-                font-size: 16px;
-                line-height: 1.4;
-            }
+        h1 {
+            color: #af6f09;
+            margin-bottom: 20px;
+        }
 
-            .summary {
-                margin: 20px 0;
-                font-size: 15px;
-            }
+        p {
+            font-size: 16px;
+            line-height: 1.4;
+        }
 
-            input {
-                padding: 8px;
-                width: 70%;
-                margin-top: 10px;
-                font-family: inherit;
-            }
+        .summary {
+            margin: 20px 0;
+            font-size: 15px;
+        }
 
-            button {
-                margin-top: 15px;
-                padding: 10px 20px;
-                font-family: inherit;
-                cursor: pointer;
-                background: #f2c57c;
-                border: none;
-                font-weight: bold;
-            }
+        input {
+            padding: 8px;
+            width: 70%;
+            margin-top: 10px;
+            font-family: inherit;
+        }
 
-            .small {
-                font-size: 13px;
-                opacity: 0.8;
-            }
-        </style>
-    </head>
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-family: inherit;
+            cursor: pointer;
+            background: #f2c57c;
+            border: none;
+            font-weight: bold;
+        }
 
-    <body>
-        <div class="box">
-            <h1>¡Gracias por participar!</h1>
+        .small {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
 
-            <p id="scoreText"></p>
-            <p id="percentileText"></p>
+<body>
+    <div class="box">
+        <h1>¡Gracias por participar!</h1>
 
-            <div class="summary" id="summaryText"></div>
+        <p id="scoreText"></p>
+        <p id="percentileText"></p>
 
-            <hr />
+        <div class="summary" id="summaryText"></div>
 
-            <p>
-                Si quieres participar en un <strong>sorteo</strong>, puedes
-                dejar tu email (opcional):
-            </p>
+        <hr />
 
-            <input type="email" id="emailInput" placeholder="tu@email.com" />
-            <br />
-            <button id="saveEmailBtn">Enviar email</button>
+        <p>
+            Si quieres participar en un <strong>sorteo</strong>, puedes
+            dejar tu email (opcional):
+        </p>
 
-            <p class="small">
-                El email no se asocia con tus decisiones ni con tu puntuación.
-            </p>
-        </div>
+        <input type="email" id="emailInput" placeholder="tu@email.com" />
+        <br />
+        <button id="saveEmailBtn">Enviar email</button>
 
-        <script src="/static/thanks.js"></script>
-    </body>
+        <p class="small">
+            El email no se asocia con tus decisiones ni con tu puntuación.
+        </p>
+    </div>
+
+    <script src="/static/thanks.js"></script>
+</body>
+
 </html>

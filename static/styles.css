@@ -1,7 +1,10 @@
 :root {
-    --bg: #ffffff; /* fondo blanco */
-    --title: #af6f09; /* marrón */
-    --text: #301934; /* morado */
+    --bg: #ffffff;
+    /* fondo blanco */
+    --title: #af6f09;
+    /* marrón */
+    --text: #301934;
+    /* morado */
     --muted: #6b6b6b;
 
     --red-dark: #8b2f2f;
@@ -20,7 +23,10 @@ body {
 
 .game-box {
     background: transparent;
-    width: 420px;
+    width: 90%;
+    /* Mobile fix */
+    max-width: 420px;
+    /* Original width cap */
     margin: 40px auto;
     padding: 25px;
     border-radius: 10px;
@@ -35,6 +41,8 @@ body {
 
 .card-container img {
     width: 140px;
+    max-width: 100%;
+    /* Safety for very small screens */
 }
 
 .shuffling {
@@ -45,9 +53,11 @@ body {
     0% {
         transform: rotate(-3deg);
     }
+
     50% {
         transform: rotate(3deg);
     }
+
     100% {
         transform: rotate(-3deg);
     }
