@@ -15,8 +15,8 @@ echo ""
 read -p "Server URL/IP: " SERVER
 read -p "SSH User: " USER
 
-# Default deployment directory
-DEPLOY_DIR=~/apps/experiment-game
+# Default deployment directory (quoted to expand on remote server)
+DEPLOY_DIR='~/apps/experiment-game'
 
 # Validate inputs
 if [[ -z "$SERVER" || -z "$USER" ]]; then
@@ -50,7 +50,7 @@ scp .env.prod "${USER}@${SERVER}:${DEPLOY_DIR}/.env"
 
 # Deploy with docker-compose
 echo -e "${GREEN}[4/5] Building and starting containers...${NC}"
-ssh "${USER}@${SERVER}" "cd ${DEPLOY_DIR} && docker compose -f docker-compose.prod.yml up -d --build"
+ssh "${USER}@${SERVER}" "cd ${DEPLOY_DIR} && docker compose -f docker-compose.prod.yml build --no-cache && docker compose -f docker-compose.prod.yml up -d"
 
 # Show status
 echo -e "${GREEN}[5/5] Checking deployment status...${NC}"
