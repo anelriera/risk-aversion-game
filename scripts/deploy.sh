@@ -14,11 +14,13 @@ echo ""
 # Prompt for server details
 read -p "Server URL/IP: " SERVER
 read -p "SSH User: " USER
-read -p "Deployment folder (e.g., /opt/experiment-game): " DEPLOY_DIR
+
+# Default deployment directory
+DEPLOY_DIR=~/apps/experiment-game
 
 # Validate inputs
-if [[ -z "$SERVER" || -z "$USER" || -z "$DEPLOY_DIR" ]]; then
-    echo -e "${RED}Error: All fields are required${NC}"
+if [[ -z "$SERVER" || -z "$USER" ]]; then
+    echo -e "${RED}Error: Server and User are required${NC}"
     exit 1
 fi
 
