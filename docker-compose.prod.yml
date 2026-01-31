@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: experiment-game
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=production
+    networks:
+      - traefik-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.experiment-game.rule=Host(`experimento.anelriera.com`)"
+      - "traefik.http.routers.experiment-game.entrypoints=websecure"
+      - "traefik.http.routers.experiment-game.tls=true"
+      - "traefik.http.routers.experiment-game.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.experiment-game.middlewares=secure-headers@file"
+      - "traefik.http.services.experiment-game.loadbalancer.server.port=8000"
+
+networks:
+  traefik-network:
+    external: true
