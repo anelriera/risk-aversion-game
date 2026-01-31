@@ -97,6 +97,15 @@ body {
     margin-top: 15px;
 }
 
+/* Evitar zoom automático en móviles */
+input[type="number"],
+input[type="email"],
+input[type="text"] {
+    font-size: 16px;
+    padding: 8px;
+    /* Mantener padding cómodo */
+}
+
 /* 🌟 título marrón */
 h1 {
     color: var(--title);
