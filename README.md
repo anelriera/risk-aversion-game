@@ -1,5 +1,8 @@
 # 🎲 Juego de Riesgo y Recompensa (Risk Aversion Experiment)
 
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://experimento.anelriera.com/)
+> **Juega ahora en:** [experimento.anelriera.com](https://experimento.anelriera.com/)
+
 Este repositorio contiene el código fuente de un experimento económico sobre aversión al riesgo, desarrollado como parte de un Trabajo de Fin de Grado (TFG).
 
 La aplicación es una plataforma web interactiva donde los participantes toman decisiones bajo incertidumbre (declaración de valor con riesgo de auditoría), permitiendo recolectar datos para su posterior análisis de comportamiento.
