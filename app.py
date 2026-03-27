@@ -85,35 +85,6 @@ def save_data():
     return jsonify({"status": "ok"})
 
 
-@app.route("/save_email", methods=["POST"])
-def save_email():
-    data = request.json
-    email = data.get("email")
-
-    if not email:
-        return jsonify({"error": "No email provided"}), 400
-
-    conn = get_db_connection()
-    cur = conn.cursor()
-
-    try:
-        cur.execute(
-            "INSERT INTO emails (email, timestamp) VALUES (%s, %s)",
-            (email, datetime.now()),
-        )
-        conn.commit()
-        return jsonify({"status": "ok"})
-    except psycopg2.errors.UniqueViolation:
-        conn.rollback()
-        return jsonify({"error": "Este email ya está registrado."}), 409
-    except Exception as e:
-        conn.rollback()
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cur.close()
-        conn.close()
-
-
 @app.route("/thanks")
 def thanks():
     if "participant_id" not in session:

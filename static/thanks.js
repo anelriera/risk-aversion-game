@@ -33,25 +33,3 @@ async function loadPercentile() {
 
 loadPercentile();
 
-// guardar email (SIN participant_id)
-document.getElementById("saveEmailBtn").addEventListener("click", async () => {
-  const email = document.getElementById("emailInput").value;
-
-  if (!email) return;
-
-  const response = await fetch("/save_email", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email }),
-  });
-
-  const result = await response.json();
-
-  if (response.ok) {
-    document.getElementById("emailInput").value = "";
-    alert("¡Gracias! Tu email ha sido guardado 😊");
-    document.getElementById("saveEmailBtn").disabled = true; // Evitar doble clic
-  } else {
-    alert(result.error || "Ocurrió un error al guardar el email.");
-  }
-});
